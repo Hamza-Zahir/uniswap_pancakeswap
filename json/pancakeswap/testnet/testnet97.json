@@ -1,0 +1,44 @@
+[
+  {
+    "img": "https://pancakeswap.finance/images/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c.png",
+    "address": "ETHER",
+    "symbol": "BNB",
+    "decimals": 18
+  },
+  {
+    "img": "https://pancakeswap.finance/images/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c.png",
+    "address": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+    "symbol": "WBNB",
+    "decimals": 18
+  },
+  {
+    "img": "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+    "address": "0x8BaBbB98678facC7342735486C851ABD7A0d17Ca",
+    "symbol": "ETH",
+    "decimals": 18
+  },
+  {
+    "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+    "address": "0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684",
+    "symbol": "USDT",
+    "decimals": 18
+  },
+  {
+    "img": "https://pancakeswap.finance/images/tokens/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56.png",
+    "address": "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
+    "symbol": "BUSD",
+    "decimals": 18
+  },
+  {
+    "img": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+    "address": "0x8a9424745056Eb399FD19a0EC26A14316684e274",
+    "symbol": "DAI",
+    "decimals": 18
+  },
+  {
+    "img": "https://pancake.kiemtienonline360.com/images/coins/0xf9f93cf501bfadb6494589cb4b4c15de49e85d0e.png",
+    "address": "0xF9f93cF501BFaDB6494589Cb4b4C15dE49E85D0e",
+    "symbol": "CAKE",
+    "decimals": 18
+  }
+]

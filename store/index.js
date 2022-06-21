@@ -3,11 +3,15 @@ import Web3 from "web3";
 const state = {
   CurrentAccount: "",
   metamaskConectedS: false,
+  positions: [],
+  positionsRemmoved: {}
 };
 
 const getters = {
   CurrentAccount: (state) => state.CurrentAccount,
   metamaskConectedS: (state) => state.metamaskConectedS,
+  positions: (state) => state.positions,
+  positionsRemmoved: (state) => state.positionsRemmoved,
 };
 const actions = {
   async connectMetamask({ commit }) {
@@ -22,11 +26,14 @@ const actions = {
       commit("setCurrentAccount", accounts[0]);
       commit("setMetamaskConected", true);
 
-      try {
+ try {
         await ethereum.request({
           method: "wallet_switchEthereumChain",
-          params: [{ chainId: `0x${Number(1).toString(16)}` }],
-        });
+          params: [{ chainId: `0x${Number(42).toString(16)}` }],
+        }).then(()=>{
+          window.location.reload();
+
+          });
       } catch (switchError) {
         console.log(switchError);
         if (switchError.code === 4902) {
@@ -35,22 +42,30 @@ const actions = {
               method: "wallet_addEthereumChain",
               params: [
                 {
-                  chainId: `0x${Number(1).toString(16)}`,
-                  chainName: "Ethereum Mainnet",
+                  chainId: `0x${Number(42).toString(16)}`,
+                  chainName: "Kovan",
                   nativeCurrency: {
-                    name: "Ether",
-                    symbol: "ETH",
+                    name: "Kovan Ether",
+                    symbol: "KOV",
                     decimals: 18,
                   },
-                  rpcUrls: ["https://cloudflare-eth.com"],
-                  blockExplorerUrls: ["https://etherscan.io"],
+                  rpcUrls: [
+                    "https://kovan.poa.network",
+                    "http://kovan.poa.network:8545",
+                    "https://kovan.infura.io/v3/${INFURA_API_KEY}",
+                    "wss://kovan.infura.io/ws/v3/${INFURA_API_KEY}",
+                    "ws://kovan.poa.network:8546",
+                  ],
+                  blockExplorerUrls: ["https://kovan.etherscan.io"],
                 },
               ],
-            });
+            }).then(()=>{
+            window.location.reload();
+
+            })
 
             // let web3 = new Web3(Web3.givenProvider || ethereum);
             // web3.eth.defaultAccount = accounts[0];
-            // window.location.reload();
           } catch (error) {
             console.log(error);
           }
@@ -73,6 +88,9 @@ const actions = {
 const mutations = {
   setCurrentAccount: (state, addres) => (state.CurrentAccount = addres),
   setMetamaskConected: (state, bool) => (state.metamaskConectedS = bool),
+  setPositions: (state, araay) => (state.positions = araay),
+  setPositionsRemmoved: (state, object) => (state.positionsRemmoved = object),
+
 };
 
 export default {
